@@ -54,3 +54,43 @@ The modified census dataset consists of approximately 32,000 data points, with e
 
 **Target Variable**
 - `income`: Income Class (<=50K, >50K)
+
+
+## Machine Learning Algorithms used
+
+* Gaussian Naive Bayes (GaussianNB)
+* Ensemble Methods (AdaBoost)
+* Support Vector Machines (SVM)
+
+### Gaussian Naive Bayes
+
+In machine learning, naive Bayes classifiers are a family of simple "probabilistic classifiers" based on applying Bayes' theorem with strong (naive) independence assumptions between the features.
+
+>Bayes Formula
+
+<img src="https://github.com/shashank136/Spam-SMS-Classifier/blob/master/images/bayes_formula.png" width="250">
+
+where A and B are events and P(B) != 0
+
+* P(A|B) is a conditional probability: the likelihood of event A occuring given that B is true.
+
+* P(B|A) is a conditional probability: the likelihood of event B occuring given that A is true.
+
+* P(A) and P(B) are the probabilities of observing A and B independently of each other; this is known as the marginal probability.
+
+When dealing with continuous data, a typical assumption is that the continuous values associated with each class are distributed according to a Gaussian distribution.
+
+![png]('https://github.com/shashank136/Finding-Donors-for-CharityML/blob/master/extra/gnb.png')
+
+### Ensemble Methods (AdaBoost)
+
+Adaboostclassifier focuses on classification problems and aims to convert a set of weak classifiers into a strong one. The boosting algorithm calls WeakLearner repeatedly in a series of rounds. 
+
+Suppose, on round t, the booster provides weaklearner with a distribution D over the training set S.In response the weak learner computes a classifier or hypothesis ht which should correctly classify a fraction of training set that has large possibility with respect to D. The weak learner's goal is to reduce the training error with respect to the training set D provided to the weak learner. This process continuse till last and the booster combines the waek hypothesis into a single final hypothesis. 
+
+Reference: https://people.cs.pitt.edu/~milos/courses/cs2750/Readings/boosting.pdf
+
+### Support Vector Machines (SVM)
+
+A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. In two dimentional space this hyperplane is a line dividing a plane in two parts where in each class lay in either side
+
