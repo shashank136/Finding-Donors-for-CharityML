@@ -80,8 +80,6 @@ where A and B are events and P(B) != 0
 
 When dealing with continuous data, a typical assumption is that the continuous values associated with each class are distributed according to a Gaussian distribution.
 
-![png]('https://github.com/shashank136/Finding-Donors-for-CharityML/blob/master/extra/gnb.png')
-
 ### Ensemble Methods (AdaBoost)
 
 Adaboostclassifier focuses on classification problems and aims to convert a set of weak classifiers into a strong one. The boosting algorithm calls WeakLearner repeatedly in a series of rounds. 
