@@ -68,7 +68,7 @@ In machine learning, naive Bayes classifiers are a family of simple "probabilist
 
 >Bayes Formula
 
-<img src="https://github.com/shashank136/Spam-SMS-Classifier/blob/master/images/bayes_formula.png" width="250">
+<img src="https://github.com/shashank136/Finding-Donors-for-CharityML/blob/master/extra/bayes_formula.png" width="250">
 
 where A and B are events and P(B) != 0
 
@@ -86,9 +86,12 @@ Adaboostclassifier focuses on classification problems and aims to convert a set 
 
 Suppose, on round t, the booster provides weaklearner with a distribution D over the training set S.In response the weak learner computes a classifier or hypothesis ht which should correctly classify a fraction of training set that has large possibility with respect to D. The weak learner's goal is to reduce the training error with respect to the training set D provided to the weak learner. This process continuse till last and the booster combines the waek hypothesis into a single final hypothesis. 
 
+![png](https://github.com/shashank136/Finding-Donors-for-CharityML/blob/master/extra/adaboost.png)
+
 Reference: https://people.cs.pitt.edu/~milos/courses/cs2750/Readings/boosting.pdf
 
 ### Support Vector Machines (SVM)
 
 A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. In two dimentional space this hyperplane is a line dividing a plane in two parts where in each class lay in either side
 
+![png](https://github.com/shashank136/Finding-Donors-for-CharityML/blob/master/extra/svm.png)
