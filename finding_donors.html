@@ -13056,25 +13056,6 @@ ul.typeahead-list  > li > a.pull-right {
 .ansi-bold { font-weight: bold; }
 
     </style>
-<style type="text/css">
-    body[data-notebook-name] > #header #header-container:not(.show-panel), /* body has data-notebook-name attribute when 
-a notebook is open. this rule won't be applied when the notebook is not open (in 404 view for example) */
-body[data-notebook-name] #menubar-container #maintoolbar:not(.show-panel),
-body[data-notebook-name] #menubar-container ul.navbar-nav:not(.show-panel) {
-  display: none;
-}
-
-#menubar.only-panel #menus.navbar-default {
-    background: #fff;
-    border-color: #fff;
-}
-
-.toolbar.with-statusbar{
-    margin-top: 3px;
-    margin-bottom: 0;
-}
-
-    </style>
 
 
 <style type="text/css">
@@ -13108,7 +13089,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -14272,7 +14253,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Based on the evaluation performed we can say that <strong>AdaBoost classifier</strong> is the most appropriate for the task of CahrityML. F-score for the adaboost classifier is better as compared to other model used above which means that it's good at predicting the income comapred to SVM and Gaussian naive bayes. Even the training/prediction time is less compared to SVM classifier which has the next best result only after adaboosting while the gaussian NB has least training/prediction time it's F-score and accuracy are very less and thus cannot be considered.</p>
+<p><strong>Answer:</strong> Based on the evaluation performed we can say that <strong>AdaBoost classifier</strong> is the most appropriate for the task of CahrityML. F-score for the adaboost classifier is better as compared to other model used above which means that it's good at predicting the income compared to SVM and Gaussian naive bayes. Even the training/prediction time is less compared to SVM classifier which has the next best result only after adaboosting while the gaussian NB has least training/prediction time it's F-score and accuracy are very less and thus cannot be considered.</p>
 
 </div>
 </div>
@@ -14292,10 +14273,14 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Adaboostclassifier focuses on classification problems and aims to convert a set of weak classifiers into a strong one.
-The boosting algorithm calls WeakLearner repeatedly in a series of rounds. Suppose, on round t, the booster provides weaklearner with a distribution D over the training set S.In response the weak learner computes a classifier or hypothesis ht which should correctly classify a fraction of training set that has large possibility with respect to D.
-The weak learner's goal is to reduce the training error with respect to the training set D provided to the weak learner. This process continuse till last and the booster combines the waek hypothesis into a single final hypothesis.
-Reference: <a href="https://people.cs.pitt.edu/~milos/courses/cs2750/Readings/boosting.pdf">https://people.cs.pitt.edu/~milos/courses/cs2750/Readings/boosting.pdf</a></p>
+<p><strong>Answer:</strong></p>
+<p>The Adaboost combines weak learner a.k.a. base learner (D1, D2 and D3) to form a strong rule.</p>
+<p>Step 1: The base learner takes all the distributions and assign equal weight (D1) or attention to each observation.</p>
+<p>Step 2: If there is any prediction error caused by first base learning algorithm, then we pay higher attention to observations having prediction error. Then, we apply the next base learning algorithm.</p>
+<p>Step 3: Iterate Step 2 till the limit of base learning algorithm is reached or higher accuracy is achieved.</p>
+<p>Finally, it combines the outputs from weak learner and creates a strong learner which eventually improves the prediction power of the model. Boosting pays higher focus on examples which are mis-classiﬁed or have higher errors by preceding weak rules.</p>
+<p><img src="extra/adaboost.png" alt="adaboost_image"></p>
+<p>Using this single strong prediction rule created with individual we already know has an income grater or less than $50,000, the Adaboost algorithm can look at new individuals data and predict if the person makes more than 50,000.</p>
 
 </div>
 </div>
@@ -14552,7 +14537,7 @@ Final F-score on the testing data: 0.7452
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> The five features that the model finds relevant are very close to features which I thought were most relevant for income prediction of an individual. Thought the education-num seems to have more imapact on the prediction which I didn't expect and hours-per-week seems to have more relevance than occupation. While the capital loss seems to have the least impact on the prediction.</p>
+<p><strong>Answer:</strong> The five features that the model finds relevant are very close to features which I thought were most relevant for income prediction of an individual. From looking at feature weights education-num seems to have the least impact on the prediction as per adaboost which is not expected and hours-per-week has more importance then occupation which is not expected, while the capital-loss is expected have the maximum impact on the prediction.</p>
 
 </div>
 </div>
